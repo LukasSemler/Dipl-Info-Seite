@@ -1,6 +1,6 @@
 <template>
   <div class="relative overflow-hidden bg-white mt-3">
-    <div class="hidden sm:absolute sm:inset-y-0 sm:block sm:h-full sm:w-full" aria-hidden="true">
+    <div class="animate__animated animate__fadeInDown hidden sm:absolute sm:inset-y-0 sm:block sm:h-full sm:w-full" aria-hidden="true">
       <div class="relative mx-auto h-full max-w-7xl">
         <svg
           class="absolute right-full translate-y-1/4 translate-x-1/4 transform lg:translate-x-1/2"
@@ -47,7 +47,7 @@
       </div>
     </div>
 
-    <div class="relative pt-6 pb-16 sm:pb-24 animate__animated animate__backInDown">
+    <div class="relative pt-6 pb-16 sm:pb-24 animate__animated animate__fadeInDown">
       <main class="mx-auto mt-16 max-w-7xl px-4 sm:mt-24">
         <div class="text-center">
           <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
@@ -76,7 +76,7 @@
     </div>
   </div>
 
-  <div class="bg-sky-500">
+  <div class="bg-sky-500 animate__animated animate__fadeInUp">
     <div class="mx-auto max-w-2xl py-16 px-4 text-center sm:py-20 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
         <span class="block">Willkommen bei</span>

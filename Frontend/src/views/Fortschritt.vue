@@ -72,7 +72,8 @@
     <div class="relative px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-prose text-lg">
         <h1>
-          <span class="animate__animated animate__fadeInRight block text-center text-lg font-semibold text-sky-500"
+          <span
+            class="animate__animated animate__fadeInRight block text-center text-lg font-semibold text-sky-500"
             >Coming Home Safe</span
           >
           <span
