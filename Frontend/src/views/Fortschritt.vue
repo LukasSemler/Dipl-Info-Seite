@@ -72,11 +72,11 @@
     <div class="relative px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-prose text-lg">
         <h1>
-          <span class="block text-center text-lg font-semibold text-sky-500"
+          <span class="animate__animated animate__fadeInRight block text-center text-lg font-semibold text-sky-500"
             >Coming Home Safe</span
           >
           <span
-            class="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl"
+            class="animate__animated animate__fadeInLeft mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl"
           >
             Fortschritt</span
           >
@@ -152,7 +152,7 @@
   </div>
 
   <!-- _____________________________ -->
-  <div class="flex justify-center">
+  <div class="flex justify-center animate__animated animate__bounceIn">
     <div class="w-1/2">
       <div class="flow-root">
         <ul role="list" class="-mb-8">

@@ -161,7 +161,7 @@
         <div class="pb-24 lg:pb-32 pt-10">
           <div class="relative z-10 mx-auto max-w-7xl pl-4 pr-8 sm:px-6 lg:px-8">
             <h1
-              class="text-4xl font-bold tracking-tight text-warm-gray-900 sm:text-5xl lg:text-6xl"
+              class="animate__animated animate__fadeInLeft text-4xl font-bold tracking-tight text-warm-gray-900 sm:text-5xl lg:text-6xl"
             >
               Kontaktieren Sie uns
             </h1>

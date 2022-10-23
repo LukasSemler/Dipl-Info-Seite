@@ -4,7 +4,8 @@ import CompNavBar from './components/CompNavBar.vue';
 </script>
 
 <template>
-  <CompNavBar></CompNavBar>
+  <div class="mb-2"> <CompNavBar></CompNavBar></div>
+ 
   <div>
     <RouterView></RouterView>
   </div>

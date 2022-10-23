@@ -9,7 +9,7 @@
             condimentum vestibulum suspendisse. Volutpat eu faucibus vivamus eget bibendum cras.
           </p>
         </div>
-        <div class="lg:col-span-2">
+        <div class="lg:col-span-2 animate__animated animate__fadeInRight">
           <ul
             role="list"
             class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8"
