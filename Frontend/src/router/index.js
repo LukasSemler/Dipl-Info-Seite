@@ -3,6 +3,8 @@ import LandingPageView from '../views/LandingPageView.vue';
 import AboutUs from '../views/AboutUs.vue';
 import Contact from '../views/Contact.vue';
 import Fortschritt from '../views/Fortschritt.vue';
+import Arbeit from '../views/Arbeit.vue';
+import NotFound from '../views/NotFound.vue';
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -26,6 +28,16 @@ const router = createRouter({
       path: '/fortschritt',
       name: 'Fortschritt',
       component: Fortschritt,
+    },
+    {
+      path: '/arbeit',
+      name: 'Unsere Arbeit',
+      component: Arbeit,
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      names: 'Not Found',
+      component: NotFound,
     },
   ],
 });

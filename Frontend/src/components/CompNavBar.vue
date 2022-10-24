@@ -77,7 +77,7 @@ const router = useRouter();
 
 const navigation = [
   { name: 'Home', link: '/', current: true },
-  { name: 'Unsere Arbeit', link: '/product', current: false },
+  { name: 'Unsere Arbeit', link: '/arbeit', current: false },
   { name: 'Fortschritt', link: '/fortschritt', current: false },
   { name: 'Über uns', link: '/aboutUs', current: false },
   { name: 'Kontakt', link: '/contact', current: false },

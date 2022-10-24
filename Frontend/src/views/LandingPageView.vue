@@ -82,8 +82,8 @@
   <div class="bg-sky-500 animate__animated animate__fadeInUp">
     <div class="mx-auto max-w-2xl py-16 px-4 text-center sm:py-20 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-        <span class="block">Willkommen bei</span>
-        <span class="block">Coming Home Safe</span>
+        <span class="block">Diplomarbeit der</span>
+        <span class="block">HTL Wien West</span>
       </h2>
       <p class="mt-4 text-lg leading-6 text-white">
         Coming Home Safe ist eine Diplomarbeit von den Schülern Lukas Semler und Benjamin Stauf,
@@ -92,7 +92,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="bg-white">
     <div class="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
       <p class="text-center text-base font-semibold text-gray-500">
         In Kooperation mit dem Verein Coming Home Safe
@@ -105,8 +105,57 @@
     </div>
   </div>
 
-  <!-- _______________________ -->
+  <div class="overflow-hidden bg-white">
+    <div class="relative mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
+      <svg
+        class="absolute top-0 left-full -translate-x-1/2 -translate-y-3/4 transform lg:left-auto lg:right-full lg:translate-x-2/3 lg:translate-y-1/4"
+        width="404"
+        height="784"
+        fill="none"
+        viewBox="0 0 404 784"
+        aria-hidden="true"
+      >
+        <defs>
+          <pattern
+            id="8b1b5f72-e944-4457-af67-0c6d15a99f38"
+            x="0"
+            y="0"
+            width="20"
+            height="20"
+            patternUnits="userSpaceOnUse"
+          >
+            <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+          </pattern>
+        </defs>
+        <rect width="404" height="784" fill="url(#8b1b5f72-e944-4457-af67-0c6d15a99f38)" />
+      </svg>
 
+      <div class="relative lg:grid lg:grid-cols-3 lg:gap-x-8">
+        <div class="lg:col-span-1">
+          <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Kommen Sie sicher nach Hause
+          </h2>
+        </div>
+        <dl
+          class="mt-10 space-y-10 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 sm:space-y-0 lg:col-span-2 lg:mt-0"
+        >
+          <div v-for="feature in features" :key="feature.name">
+            <dt>
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-md bg-sky-500 text-white"
+              >
+                <component :is="feature.icon" class="h-6 w-6" aria-hidden="true" />
+              </div>
+              <p class="mt-5 text-lg font-medium leading-6 text-gray-900">{{ feature.name }}</p>
+            </dt>
+            <dd class="mt-2 text-base text-gray-500">{{ feature.description }}</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <!-- _______________________ -->
   <section class="overflow-hidden bg-white">
     <div class="relative mx-auto max-w-7xl px-4 pt-20 pb-12 sm:px-6 lg:px-8 lg:py-20">
       <svg
@@ -182,87 +231,29 @@
       </div>
     </div>
   </section>
-
-  <!-- _______________________ -->
-
-  <!-- <div class="overflow-hidden bg-white">
-    <div class="relative mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
-      <svg
-        class="absolute top-0 left-full -translate-x-1/2 -translate-y-3/4 transform lg:left-auto lg:right-full lg:translate-x-2/3 lg:translate-y-1/4"
-        width="404"
-        height="784"
-        fill="none"
-        viewBox="0 0 404 784"
-        aria-hidden="true"
-      >
-        <defs>
-          <pattern
-            id="8b1b5f72-e944-4457-af67-0c6d15a99f38"
-            x="0"
-            y="0"
-            width="20"
-            height="20"
-            patternUnits="userSpaceOnUse"
-          >
-            <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
-          </pattern>
-        </defs>
-        <rect width="404" height="784" fill="url(#8b1b5f72-e944-4457-af67-0c6d15a99f38)" />
-      </svg>
-
-      <div class="relative lg:grid lg:grid-cols-3 lg:gap-x-8">
-        <div class="lg:col-span-1">
-          <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            A better way to send money.
-          </h2>
-        </div>
-        <dl
-          class="mt-10 space-y-10 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 sm:space-y-0 lg:col-span-2 lg:mt-0"
-        >
-          <div v-for="feature in features" :key="feature.name">
-            <dt>
-              <div
-                class="flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white"
-              >
-                <component :is="feature.icon" class="h-6 w-6" aria-hidden="true" />
-              </div>
-              <p class="mt-5 text-lg font-medium leading-6 text-gray-900">{{ feature.name }}</p>
-            </dt>
-            <dd class="mt-2 text-base text-gray-500">{{ feature.description }}</dd>
-          </div>
-        </dl>
-      </div>
-    </div>
-  </div> -->
 </template>
 
 <script setup>
-import { BoltIcon, EnvelopeIcon, GlobeAltIcon, ScaleIcon } from '@heroicons/vue/24/outline';
+import { LockClosedIcon, EnvelopeIcon, GlobeAltIcon, ScaleIcon } from '@heroicons/vue/24/outline';
 
 const features = [
   {
-    name: 'Competitive rates',
+    name: 'Weltweit verfügbar',
     description:
-      'Consequuntur omnis dicta cumque, inventore atque ab dolores aspernatur tempora ab doloremque.',
+      'Unsere Software kann weltweit verwendet werden. Die Hauptzielgruppe sind Frauen aber Frauen welche in Österreich wohnen.',
     icon: GlobeAltIcon,
   },
   {
-    name: 'No hidden fees',
+    name: 'Keine versteckte Kosten',
     description:
-      'Corporis quisquam nostrum nulla veniam recusandae temporibus aperiam officia incidunt at distinctio ratione.',
+      'Die Webapp ist komplett kostenlos und wird auch immer kostenlos bleiben. Wir finanzieren uns durch Spenden und Sponsoren.',
     icon: ScaleIcon,
   },
   {
-    name: 'Instant transfers',
+    name: 'Komplett Sicher',
     description:
-      'Omnis, illo delectus? Libero, possimus nulla nemo tenetur adipisci repellat dolore eligendi velit doloribus mollitia.',
-    icon: BoltIcon,
-  },
-  {
-    name: 'Reminder emails',
-    description:
-      'Veniam necessitatibus reiciendis fugit explicabo dolorem nihil et omnis assumenda odit? Quisquam unde accusantium.',
-    icon: EnvelopeIcon,
+      'Unser Webapp ist komplett sicher. Das heißt deine Daten sowie dein Standort werden nur von MitarbeiterInnen eingesehen.',
+    icon: LockClosedIcon,
   },
 ];
 </script>
