@@ -318,14 +318,17 @@
                 </div>
                 <h3 class="text-lg font-medium text-white">Kontakt Informationen</h3>
                 <p class="mt-6 max-w-3xl text-base text-sky-50">
-                  Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst
-                  amet. Sapien tortor lacus arcu.
+                  Für weitere Fragen oder Anregungen können Sie uns gerne eine Email schreiben.
                 </p>
                 <dl class="mt-8 space-y-6">
                   <dt><span class="sr-only">Email</span></dt>
                   <dd class="flex text-base text-sky-50">
                     <EnvelopeIcon class="h-6 w-6 flex-shrink-0 text-sky-200" aria-hidden="true" />
                     <span class="ml-3">semler.l04@htlwienwest.at</span>
+                  </dd>
+                  <dd class="flex text-base text-sky-50">
+                    <EnvelopeIcon class="h-6 w-6 flex-shrink-0 text-sky-200" aria-hidden="true" />
+                    <span class="ml-3">stauf.b03@htlwienwest.at</span>
                   </dd>
                 </dl>
               </div>
@@ -487,7 +490,7 @@
   </div>
 </template>
 <script setup>
-import { EnvelopeIcon, PhoneIcon } from '@heroicons/vue/24/outline';
+import { EnvelopeIcon } from '@heroicons/vue/24/outline';
 import { ref, onMounted, reactive, computed } from 'vue';
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue';
 import { CheckCircleIcon } from '@heroicons/vue/24/outline';

@@ -1,6 +1,9 @@
 <template>
   <div class="relative overflow-hidden bg-white mt-3">
-    <div class="animate__animated animate__fadeInDown hidden sm:absolute sm:inset-y-0 sm:block sm:h-full sm:w-full" aria-hidden="true">
+    <div
+      class="animate__animated animate__fadeInDown hidden sm:absolute sm:inset-y-0 sm:block sm:h-full sm:w-full"
+      aria-hidden="true"
+    >
       <div class="relative mx-auto h-full max-w-7xl">
         <svg
           class="absolute right-full translate-y-1/4 translate-x-1/4 transform lg:translate-x-1/2"
@@ -66,7 +69,7 @@
             <div class="rounded-md shadow">
               <a
                 href="https://coming-home-safe-hosting.onrender.com"
-                class="animate__animated animate__pulse animate__delay-2s	 flex w-full items-center justify-center rounded-md border border-transparent bg-sky-500 px-8 py-3 text-base font-medium text-white hover:bg-sky-600 md:py-4 md:px-10 md:text-lg"
+                class="animate__animated animate__pulse animate__delay-2s flex w-full items-center justify-center rounded-md border border-transparent bg-sky-500 px-8 py-3 text-base font-medium text-white hover:bg-sky-600 md:py-4 md:px-10 md:text-lg"
                 >Get started</a
               >
             </div>
