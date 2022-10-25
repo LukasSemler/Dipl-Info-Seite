@@ -42,7 +42,6 @@
       </transition>
     </div>
   </div>
-
   <div
     aria-live="assertive"
     class="pointer-events-none fixed inset-0 flex items-end px-4 py-6 sm:items-start sm:p-6 z-40"
@@ -86,73 +85,6 @@
       </transition>
     </div>
   </div>
-
-  <TransitionRoot as="template" :show="open">
-    <Dialog as="div" class="relative z-10" @close="open = true">
-      <TransitionChild
-        as="template"
-        enter="ease-out duration-300"
-        enter-from="opacity-0"
-        enter-to="opacity-100"
-        leave="ease-in duration-200"
-        leave-from="opacity-100"
-        leave-to="opacity-0"
-      >
-        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-      </TransitionChild>
-
-      <div class="fixed inset-0 z-10 overflow-y-auto">
-        <div
-          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
-        >
-          <TransitionChild
-            as="template"
-            enter="ease-out duration-300"
-            enter-from="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            enter-to="opacity-100 translate-y-0 sm:scale-100"
-            leave="ease-in duration-200"
-            leave-from="opacity-100 translate-y-0 sm:scale-100"
-            leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-          >
-            <DialogPanel
-              class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6"
-            >
-              <div>
-                <div
-                  class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-sky-100"
-                >
-                  <ExclamationTriangleIcon class="h-6 w-6 text-sky-600" aria-hidden="true" />
-                </div>
-                <div class="mt-3 text-center sm:mt-5">
-                  <DialogTitle as="h3" class="text-lg font-medium leading-6 text-gray-900"
-                    >AGB's</DialogTitle
-                  >
-                  <div class="mt-2">
-                    <p class="text-sm text-gray-500">
-                      Bitte akzeptieren Sie unsere AGBs um fortzufahren
-                    </p>
-                    <br />
-                    <p @click="toAGB" class="text-sm text-gray-700 text-left">
-                      zu den <span class="underline">AGBs</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-5 sm:mt-6">
-                <button
-                  type="button"
-                  class="inline-flex w-full justify-center rounded-md border border-transparent bg-sky-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-sky-700 focus:outline-none sm:text-sm"
-                  @click="agbs"
-                >
-                  Akzeptieren
-                </button>
-              </div>
-            </DialogPanel>
-          </TransitionChild>
-        </div>
-      </div>
-    </Dialog>
-  </TransitionRoot>
 
   <div class="bg-white">
     <main class="overflow-hidden">
@@ -399,27 +331,6 @@
                       {{ val.email.$silentErrors[0].$message }}
                     </p>
                   </div>
-                  <div>
-                    <div class="flex justify-between">
-                      <label for="phone" class="block text-sm font-medium text-warm-gray-900"
-                        >Telefonnummer</label
-                      >
-                    </div>
-                    <div class="mt-1">
-                      <input
-                        type="text"
-                        v-model="state.telNr"
-                        name="phone"
-                        id="phone"
-                        autocomplete="tel"
-                        class="block w-full rounded-md border-warm-gray-300 py-3 px-4 text-warm-gray-900 shadow-sm focus:border-sky-500 focus:ring-sky-500"
-                        aria-describedby="phone-optional"
-                      />
-                    </div>
-                    <p v-if="val.telNr.$invalid" class="mt-2 text-sm text-red-600" id="email-error">
-                      {{ val.telNr.$silentErrors[0].$message }}
-                    </p>
-                  </div>
                   <div class="sm:col-span-2">
                     <label for="subject" class="block text-sm font-medium text-warm-gray-900"
                       >Betreff</label
@@ -489,9 +400,8 @@
 import { EnvelopeIcon } from '@heroicons/vue/24/outline';
 import { ref, onMounted, reactive, computed } from 'vue';
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue';
-import { CheckCircleIcon } from '@heroicons/vue/24/outline';
 import { XMarkIcon } from '@heroicons/vue/20/solid';
-import { ExclamationTriangleIcon } from '@heroicons/vue/24/outline';
+import { ExclamationTriangleIcon, CheckCircleIcon } from '@heroicons/vue/24/outline';
 import { useRouter } from 'vue-router';
 import axios from 'axios';
 // Vuelidate Imports
@@ -508,7 +418,6 @@ const state = reactive({
   vorname: '',
   nachname: '',
   email: '',
-  telNr: '',
   betreff: '',
   nachricht: '',
 });
@@ -518,29 +427,12 @@ const rules = computed(() => {
     vorname: { required },
     nachname: { required },
     email: { required, email },
-    telNr: { required },
     betreff: { required },
     nachricht: { required, maxLength: maxLength(500) },
   };
 });
 const val = useValidate(rules, state);
-onMounted(() => {
-  console.log('Mount');
-  const agbs = localStorage.getItem('AGBs');
-  if (agbs == 'true') open.value = false;
-  else open.value = true;
-});
-function agbs() {
-  localStorage.setItem('AGBs', true);
-  open.value = false;
-}
-function toAGB() {
-  open.value = false;
-  router.push('/agb');
-}
-const offices = [
-  { id: 1, city: 'Los Angeles', address: ['4556 Brendan Ferry', 'Los Angeles, CA 90210'] },
-];
+
 const recaptcha = async (e) => {
   e.preventDefault();
   // (optional) Wait until recaptcha has been loaded.
@@ -554,7 +446,7 @@ const recaptcha = async (e) => {
     val.value.$validate();
     if (!val.value.$error) {
       const data = {
-        service_id: 'Oil4youTest',
+        service_id: 'Dipl-Info-Seite',
         template_id: 'template_aweyw4k',
         user_id: 'UOSx_d01TPH9X5MzB',
         template_params: {
@@ -562,7 +454,6 @@ const recaptcha = async (e) => {
           vorname: state.vorname,
           nachname: state.nachname,
           reply_to: state.email,
-          tel: state.telNr,
           betreff: state.betreff,
           nachricht: state.nachricht,
         },
