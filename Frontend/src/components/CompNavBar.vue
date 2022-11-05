@@ -35,7 +35,7 @@
                   item.current
                     ? 'bg-sky-500 text-white'
                     : 'text-gray-800 hover:bg-sky-500 hover:text-white',
-                  'px-3 py-2 rounded-md text-sm font-medium',
+                  'px-3 py-2 rounded-md text-sm font-medium cursor-pointer',
                 ]"
                 :aria-current="item.current ? 'page' : undefined"
                 >{{ item.name }}</a
@@ -90,8 +90,6 @@ const navigationRichtig = computed(() => {
       current: router.currentRoute.value.path === item.link,
     };
   });
-
-  console.log(erg);
 
   return erg;
 });

@@ -19,6 +19,7 @@ app.use(router);
 const pinia = createPinia();
 app.use(pinia);
 
+
 app.use(VueReCaptcha, { siteKey: '6LfP5aUiAAAAAN9VE5x---r3Tgt2AtZsyhCJyZnN' });
 
 app.mount('#app');

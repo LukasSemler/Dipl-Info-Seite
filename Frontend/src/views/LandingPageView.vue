@@ -68,9 +68,9 @@
           <div class="mx-auto mt-5 max-w-md sm:flex sm:justify-center md:mt-8">
             <div class="rounded-md shadow">
               <a
-                href="https://coming-home-safe-hosting.onrender.com"
+                href="https://chstest.onrender.com"
                 class="animate__animated animate__pulse animate__delay-2s flex w-full items-center justify-center rounded-md border border-transparent bg-sky-500 px-8 py-3 text-base font-medium text-white hover:bg-sky-600 md:py-4 md:px-10 md:text-lg"
-                >Get started</a
+                >Projekt anschauen</a
               >
             </div>
           </div>
@@ -206,9 +206,9 @@
           <blockquote class="relative">
             <div class="text-2xl font-medium leading-9 text-gray-900">
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, distinctio. Alias
-                voluptatibus deserunt nobis architecto sapiente doloribus laborum ad! Quas culpa a,
-                deleniti quis eos eligendi. Inventore exercitationem in minima?
+                Wenn ich abends nach Hause laufe, bin ich immer voll präsent, ich achte auf jedes
+                Geräusch. Ich überlege mir, welcher Weg der sicherste ist, und ich teile meinen
+                Handy-Standort mit meinem Mann.
               </p>
             </div>
             <footer class="mt-8">
@@ -221,8 +221,16 @@
                   />
                 </div>
                 <div class="ml-4 lg:ml-0">
-                  <div class="text-base font-medium text-gray-900">Judith Black</div>
-                  <div class="text-base font-medium text-sky-500">Userin von Coming Home Safe</div>
+                  <div class="text-base font-medium text-gray-900">
+                    <a
+                      href="https://www.tagblatt.ch/leben/textmewhenyougethome-die-angst-der-frauen-nachts-auf-der-strasse-ist-diffus-aber-sie-hat-bekannte-wurzeln-ld.2116253"
+                      class="hover:underline"
+                      >Vera, 30</a
+                    >
+                  </div>
+                  <div class="text-base font-medium text-sky-500">
+                    Vielleicht zukünftige Userin von Coming Home Safe
+                  </div>
                 </div>
               </div>
             </footer>

@@ -5,9 +5,11 @@
         <div class="space-y-5 sm:space-y-4">
           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Über uns</h2>
           <p class="text-xl text-gray-500">
-            Nulla quam felis, enim faucibus proin velit, ornare id pretium. Augue ultrices sed arcu
-            condimentum vestibulum suspendisse. Volutpat eu faucibus vivamus eget bibendum cras.
+            Das Team, welches aus Lukas Semler und Benjamin Stauf besteht, hat sich im Jahr 2022-23
+            zur Aufgabe gemacht, den Heimweg für Frauen und Männer sicherer zu machen. Das Projekt
+            wurde hierbei im Rahmen als Diplomarbeit geführt und betreut.
           </p>
+          <p class="text-lg"><span class="font-bold text-sky-500">Betreuer:</span> Robert Baumgartner</p>
         </div>
         <div class="lg:col-span-2">
           <ul

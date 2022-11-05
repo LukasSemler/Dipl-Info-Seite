@@ -83,113 +83,51 @@
           >
         </h1>
         <p class="mt-8 text-xl leading-8 text-gray-500">
-          Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi,
-          nibh dui, diam eget aliquam. Quisque id at vitae feugiat egestas ac. Diam nulla orci at in
-          viverra scelerisque eget. Eleifend egestas fringilla sapien.
+          Hier wird der aktuelle Diplomarbeits-Fortschritt in Form von Todos angezeigt.
         </p>
       </div>
-      <div class="prose prose-lg prose-sky mx-auto mt-6 text-gray-500">
-        <p>
-          Faucibus commodo massa rhoncus, volutpat. <strong>Dignissim</strong> sed
-          <strong>eget risus enim</strong>. Mattis mauris semper sed amet vitae sed turpis id. Id
-          dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.
-          Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim.
-          <a href="#">Mattis mauris semper</a> sed amet vitae sed turpis id.
-        </p>
-        <ul role="list">
-          <li>Quis elit egestas venenatis mattis dignissim.</li>
-          <li>Cras cras lobortis vitae vivamus ultricies facilisis tempus.</li>
-          <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
-        </ul>
-        <p>
-          Quis semper vulputate aliquam venenatis egestas sagittis quisque orci. Donec commodo sit
-          viverra aliquam porttitor ultrices gravida eu. Tincidunt leo, elementum mattis elementum
-          ut nisl, justo, amet, mattis. Nunc purus, diam commodo tincidunt turpis. Amet, duis sed
-          elit interdum dignissim.
-        </p>
-        <h2>From beginner to expert in 30 days</h2>
-        <p>
-          Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat in. Convallis arcu
-          ipsum urna nibh. Pharetra, euismod vitae interdum mauris enim, consequat vulputate nibh.
-          Maecenas pellentesque id sed tellus mauris, ultrices mauris. Tincidunt enim cursus
-          ridiculus mi. Pellentesque nam sed nullam sed diam turpis ipsum eu a sed convallis diam.
-        </p>
-        <blockquote>
-          <p>
-            Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur
-            neque tristique pellentesque. Blandit amet, sed aenean erat arcu morbi.
-          </p>
-        </blockquote>
-        <p>
-          Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris
-          semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus
-          viverra tellus varius sit neque erat velit.
-        </p>
-        <figure>
-          <img
-            class="w-full rounded-lg"
-            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&w=1310&h=873&q=80&facepad=3"
-            alt=""
-            width="1310"
-            height="873"
-          />
-          <figcaption>Sagittis scelerisque nulla cursus in enim consectetur quam.</figcaption>
-        </figure>
-        <h2>Everything you need to get up and running</h2>
-        <p>
-          Purus morbi dignissim senectus mattis <a href="#">adipiscing</a>. Amet, massa quam varius
-          orci dapibus volutpat cras. In amet eu ridiculus leo sodales cursus tristique. Tincidunt
-          sed tempus ut viverra ridiculus non molestie. Gravida quis fringilla amet eget dui tempor
-          dignissim. Facilisis auctor venenatis varius nunc, congue erat ac. Cras fermentum
-          convallis quam.
-        </p>
-        <p>
-          Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris
-          semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus
-          viverra tellus varius sit neque erat velit.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- _____________________________ -->
-  <div class="flex justify-center animate__animated animate__bounceIn">
-    <div class="w-1/2">
-      <div class="flow-root">
-        <ul role="list" class="-mb-8">
-          <li v-for="(event, eventIdx) in timeline" :key="event.id">
-            <div class="relative pb-8">
-              <span
-                v-if="eventIdx !== timeline.length - 1"
-                class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"
-                aria-hidden="true"
-              />
-              <div class="relative flex space-x-3">
-                <div>
+      <!-- Fortschritt-->
+      <div class="lg:mx-32 mt-16 flex justify-center animate__animated animate__bounceIn">
+        <div class="w-1/2">
+          <div class="flow-root">
+            <ul role="list" class="-mb-8">
+              <li v-for="(event, eventIdx) in timeline" :key="event.id">
+                <div class="relative pb-8">
                   <span
-                    :class="[
-                      event.iconBackground,
-                      'h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white',
-                    ]"
-                  >
-                    <component :is="event.icon" class="h-5 w-5 text-white" aria-hidden="true" />
-                  </span>
-                </div>
-                <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
-                  <div>
-                    <p class="text-sm text-gray-500">
-                      {{ event.content }}
-                      <a :href="event.href" class="font-medium text-gray-900">{{ event.target }}</a>
-                    </p>
+                    v-if="eventIdx !== timeline.length - 1"
+                    class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"
+                    aria-hidden="true"
+                  />
+                  <div class="relative flex space-x-3">
+                    <div>
+                      <span
+                        :class="[
+                          event.iconBackground,
+                          'h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white',
+                        ]"
+                      >
+                        <component :is="event.icon" class="h-5 w-5 text-white" aria-hidden="true" />
+                      </span>
+                    </div>
+                    <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+                      <div>
+                        <p class="text-sm text-gray-500">
+                          {{ event.content }}
+                          <a :href="event.href" class="font-medium text-gray-900">{{
+                            event.target
+                          }}</a>
+                        </p>
+                      </div>
+                      <div class="whitespace-nowrap text-right text-sm text-gray-500">
+                        <time :datetime="event.datetime">{{ event.date }}</time>
+                      </div>
+                    </div>
                   </div>
-                  <div class="whitespace-nowrap text-right text-sm text-gray-500">
-                    <time :datetime="event.datetime">{{ event.date }}</time>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </li>
-        </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -199,55 +137,147 @@
 import { CheckIcon, HandThumbUpIcon, UserIcon } from '@heroicons/vue/20/solid';
 
 const timeline = [
+  // {
+  //   id: 1,
+  //   content: 'Applied to',
+  //   target: 'Front End Developer',
+  //   href: '#',
+  //   date: 'Sep 20',
+  //   datetime: '2020-09-20',
+  //   icon: UserIcon,
+  //   iconBackground: 'bg-gray-400',
+  // },
+  // {
+  //   id: 2,
+  //   content: 'Advanced to phone screening by',
+  //   target: 'Bethany Blake',
+  //   href: '#',
+  //   date: 'Sep 22',
+  //   datetime: '2020-09-22',
+  //   icon: HandThumbUpIcon,
+  //   iconBackground: 'bg-blue-500',
+  // },
+  // {
+  //   id: 3,
+  //   content: 'Completed phone screening with',
+  //   target: 'Martha Gardner',
+  //   href: '#',
+  //   date: 'Sep 28',
+  //   datetime: '2020-09-28',
+  //   icon: CheckIcon,
+  //   iconBackground: 'bg-green-500',
+  // },
+
   {
     id: 1,
-    content: 'Applied to',
-    target: 'Front End Developer',
-    href: '#',
-    date: 'Sep 20',
-    datetime: '2020-09-20',
-    icon: UserIcon,
-    iconBackground: 'bg-gray-400',
-  },
-  {
-    id: 2,
-    content: 'Advanced to phone screening by',
-    target: 'Bethany Blake',
-    href: '#',
-    date: 'Sep 22',
-    datetime: '2020-09-22',
-    icon: HandThumbUpIcon,
-    iconBackground: 'bg-blue-500',
-  },
-  {
-    id: 3,
-    content: 'Completed phone screening with',
-    target: 'Martha Gardner',
-    href: '#',
-    date: 'Sep 28',
-    datetime: '2020-09-28',
-    icon: CheckIcon,
-    iconBackground: 'bg-green-500',
-  },
-  {
-    id: 4,
-    content: 'Advanced to interview by',
-    target: 'Bethany Blake',
-    href: '#',
-    date: 'Sep 30',
-    datetime: '2020-09-30',
-    icon: HandThumbUpIcon,
-    iconBackground: 'bg-blue-500',
-  },
-  {
-    id: 5,
-    content: 'Completed interview with',
-    target: 'Katherine Snyder',
+    content: 'Datenbank erstellt',
+    target: '(Postgres)',
     href: '#',
     date: 'Oct 4',
     datetime: '2020-10-04',
     icon: CheckIcon,
     iconBackground: 'bg-green-500',
+  },
+  {
+    id: 2,
+    content: 'Webseitengrundgreüst erstellt',
+    target: '(Vue.js)',
+    href: '#',
+    date: 'Oct 4',
+    datetime: '2020-10-04',
+    icon: CheckIcon,
+    iconBackground: 'bg-green-500',
+  },
+  {
+    id: 3,
+    content: 'Anmeldung und Registration durch',
+    target: 'User',
+    href: '#',
+    date: 'Oct 4',
+    datetime: '2020-10-04',
+    icon: CheckIcon,
+    iconBackground: 'bg-green-500',
+  },
+  {
+    id: 4,
+    content: 'Standort des Users muss sichtbar sein auf der ',
+    target: 'Mitarbeiter-Map',
+    href: '#',
+    date: 'Oct 4',
+    datetime: '2020-10-04',
+    icon: CheckIcon,
+    iconBackground: 'bg-green-500',
+  },
+  {
+    id: 5,
+    content: 'User müssen getrackt werden können',
+    target: '',
+    href: '#',
+    date: 'Oct 4',
+    datetime: '2020-10-04',
+    icon: CheckIcon,
+    iconBackground: 'bg-green-500',
+  },
+  {
+    id: 6,
+    content: 'Administrator kann Mitarbeiter anlegen. Weiterleitung auf ',
+    target: 'Mitarbeiter-View',
+    href: '#',
+    date: 'Oct 4',
+    datetime: '2020-10-04',
+    icon: CheckIcon,
+    iconBackground: 'bg-green-500',
+  },
+  {
+    id: 7,
+    content:
+      'User-Alarm. User kann einen Alarm auslösen, welcher für den Mitarbeiter als Warnsignal angezeigt wird. Dadurch erhält der User eine Navigation zur nächsten Polizeistation.',
+    target: '',
+    href: '#',
+    date: 'Oct 4',
+    datetime: '2020-10-04',
+    icon: CheckIcon,
+    iconBackground: 'bg-green-500',
+  },
+  {
+    id: 8,
+    content: '2-Faktorenauthentifizierung bei Registration, sowie bei Login auf ',
+    target: 'Mitarbeiter-Map',
+    href: '#',
+    date: 'Oct 4',
+    datetime: '2020-10-04',
+    icon: CheckIcon,
+    iconBackground: 'bg-green-500',
+  },
+  {
+    id: 9,
+    content: 'Kommunikation zwischen Mitarbeiter und User geschieht über ein integriertes',
+    target: 'Chat-System',
+    href: '#',
+    date: 'Oct 4',
+    datetime: '2020-10-04',
+    icon: CheckIcon,
+    iconBackground: 'bg-green-500',
+  },
+  {
+    id: 10,
+    content: 'Testen der gesamten Web-Applikation',
+    target: '',
+    href: '#',
+    date: 'Oct 4',
+    datetime: '2020-10-04',
+    icon: UserIcon,
+    iconBackground: 'bg-gray-400',
+  },
+  {
+    id: 11,
+    content: 'Fertiger Deploy, der Web-Applikation bei Coming-Home-Safe',
+    target: '',
+    href: '#',
+    date: 'Oct 4',
+    datetime: '2020-10-04',
+    icon: UserIcon,
+    iconBackground: 'bg-gray-400',
   },
 ];
 </script>
