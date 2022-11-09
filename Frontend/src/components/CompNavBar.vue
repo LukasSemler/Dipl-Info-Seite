@@ -46,18 +46,18 @@
       </div>
     </div>
 
-    <DisclosurePanel class="sm:hidden">
+    <DisclosurePanel class="sm:hidden z-10 ">
       <div class="space-y-1 px-2 pt-2 pb-3">
         <DisclosureButton
           v-for="item in navigationRichtig"
           :key="item.name"
           as="a"
-          :href="item.href"
+          @click="router.push(item.link)"
           :class="[
             item.current
-              ? 'bg-gray-900 text-white'
-              : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-            'block px-3 py-2 rounded-md text-base font-medium',
+              ? 'bg-sky-500 text-white'
+              : 'text-gray-800 hover:bg-sky-500 hover:text-white',
+            'block px-3 py-2 rounded-md text-base font-medium sticky top-0 left-0 right-0 z-10',
           ]"
           :aria-current="item.current ? 'page' : undefined"
           >{{ item.name }}</DisclosureButton

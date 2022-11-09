@@ -86,47 +86,46 @@
           Hier wird der aktuelle Diplomarbeits-Fortschritt in Form von Todos angezeigt.
         </p>
       </div>
+
       <!-- Fortschritt-->
-      <div class="lg:mx-32 mt-16 flex justify-center animate__animated animate__bounceIn">
-        <div class="w-1/2">
-          <div class="flow-root">
-            <ul role="list" class="-mb-8">
-              <li v-for="(event, eventIdx) in timeline" :key="event.id">
-                <div class="relative pb-8">
-                  <span
-                    v-if="eventIdx !== timeline.length - 1"
-                    class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"
-                    aria-hidden="true"
-                  />
-                  <div class="relative flex space-x-3">
+      <div class="md:mx-64 mt-16 flex justify-center animate__animated animate__bounceIn">
+        <div class="flow-root md:mx-64">
+          <ul role="list" class="-mb-8">
+            <li v-for="(event, eventIdx) in timeline" :key="event.id">
+              <div class="relative pb-8">
+                <span
+                  v-if="eventIdx !== timeline.length - 1"
+                  class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"
+                  aria-hidden="true"
+                />
+                <div class="relative flex space-x-3">
+                  <div>
+                    <span
+                      :class="[
+                        event.iconBackground,
+                        'h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white',
+                      ]"
+                    >
+                      <component :is="event.icon" class="h-5 w-5 text-white" aria-hidden="true" />
+                    </span>
+                  </div>
+                  <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
                     <div>
-                      <span
-                        :class="[
-                          event.iconBackground,
-                          'h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white',
-                        ]"
-                      >
-                        <component :is="event.icon" class="h-5 w-5 text-white" aria-hidden="true" />
-                      </span>
+                      <p class="text-sm text-gray-500">
+                        {{ event.content }}
+                        <a :href="event.href" class="font-medium text-gray-900">{{
+                          event.target
+                        }}</a>
+                      </p>
                     </div>
-                    <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
-                      <div>
-                        <p class="text-sm text-gray-500">
-                          {{ event.content }}
-                          <a :href="event.href" class="font-medium text-gray-900">{{
-                            event.target
-                          }}</a>
-                        </p>
-                      </div>
-                      <div class="whitespace-nowrap text-right text-sm text-gray-500">
-                        <time :datetime="event.datetime">{{ event.date }}</time>
-                      </div>
+                    <div class="whitespace-nowrap text-right text-sm text-gray-500">
+                      <time :datetime="event.datetime">{{ event.date }}</time>
                     </div>
                   </div>
                 </div>
-              </li>
-            </ul>
-          </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
