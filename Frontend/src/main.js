@@ -5,6 +5,7 @@ import './assets/css/index.css';
 import { createPinia } from 'pinia';
 import axios from 'axios';
 import { VueReCaptcha } from 'vue-recaptcha-v3';
+import VueMatomo from 'vue-matomo';
 
 //Base-URL axios
 if (location.origin === 'http://localhost:8080' || location.origin === 'http://localhost:5050') {
@@ -19,7 +20,13 @@ app.use(router);
 const pinia = createPinia();
 app.use(pinia);
 
-
 app.use(VueReCaptcha, { siteKey: '6LfP5aUiAAAAAN9VE5x---r3Tgt2AtZsyhCJyZnN' });
+
+app.use(VueMatomo, {
+  host: 'https://cominghomesafe.matomo.cloud/',
+  siteId: 1,
+});
+
+window._paq.push(['trackPageView']); //To track pageview
 
 app.mount('#app');
